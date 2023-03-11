@@ -33,7 +33,19 @@ h1 {
     color: blue;
 }
 
+.accordion-header:hover {
+    color: black;
+}
+
 .accordion-header:hover>.accordion__arrow {
+    transform: rotate(180deg);
+}
+
+details[open] summary{
+    color: black;
+}
+
+details[open] .accordion__arrow {
     transform: rotate(180deg);
 }
 
