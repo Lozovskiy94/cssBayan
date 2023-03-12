@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f7eed5;
+    font-family: 'Inika', serif;
+    font-weight: 700;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+h1 {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.wrapper {
+    max-width: 50vw;
+    margin: 0 auto;
+}
+
+.ac-container label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Inika', serif;
+    cursor: pointer;
+    color: #2f95c4;
+    font-size: 1.5em;
+    font-weight: 700;
+    border-top: 0.1em solid #ccc;
+    padding: 0.5em;
+}
+
+.ac-container label:hover .accordion__arrow {
+    transform: rotate(180deg);
+}
+
+.ac-container:hover div label {
+    color: black;
+}
+
+.accordion__arrow {
+    max-width: 5%;
+}
+
+.ac-container input {
+    display: none;
+}
+
+.ac-container .accordion-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 0px;
+    transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+    border: none;
+    padding: 0;
+}
+
+.ac-container input:checked~.accordion-content {
+    transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+    height: 22em;
+}
+
+.ac-container input:checked~label {
+    color: black;
+}
+
+.ac-container input:checked~label .accordion__arrow {
+    transform: rotate(180deg);
+}
+
+
+label:hover~.accordion-content {
+    height: 22em;
+}
+
+.accordion-content:hover {
+    height: 22em;
+}
+
+@media screen and (max-width: 920px) {
+    body {
+        width: 100%;
+    }
+
+    .wrapper {
+        max-width: 28em;
+        margin: 0 auto;
+    }
+
+    .ac-container label {
+        font-size: 1.3em;
+    }
+
+    .accordion-img {
+        max-width: 100%;
+    }
+
+    .accordion-img > img {
+        max-width: 100%;
+    }
+        
+}
+
+@media screen and (max-width: 400px) {
+    .wrapper {
+        max-width: 100%;
+        margin: 0;
+    }
+
+    label:hover~.accordion-content {
+        height: 510px;
+    }
+    
+    .accordion-content:hover {
+        height: 22em;
+    }
+
+    .ac-container input:checked~.accordion-conten {
+        height: 22em;
+    }
+
+    .ac-container label {
+        font-size: 1em;
+    }
+}
